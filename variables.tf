@@ -16,6 +16,18 @@ variable "prefix_separator" {
   default     = "-"
 }
 
+variable "aws_provider_region" {
+  type = string
+  description = "Region to use for provisioning AWS resources via assume-role"
+  default = null
+}
+
+variable "eks_launch_role_arn" {
+  type = string
+  description = "Name of IAM role to assume for launching EKS clusters"
+  default = null
+}
+
 ################################################################################
 # Cluster
 ################################################################################

@@ -25,9 +25,8 @@ locals {
 ################################################################################
 
 resource "aws_eks_cluster" "this" {
-  count = local.create ? 1 : 0
-
   name                          = var.cluster_name
+  provider = aws.eks
   role_arn                      = local.cluster_role
   version                       = var.cluster_version
   enabled_cluster_log_types     = var.cluster_enabled_log_types
